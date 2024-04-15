@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Corte Americano - Pago</title>
+    <!--Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="js/product-info.js" defer></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="max-w-xl mx-auto p-6 text-center bg-white shadow-lg rounded-lg mt-12">
+        <h2 class="text-xl font-bold text-gray-900">Pago</h2>
+
+        <div class="py-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700" for="cardholder-name">Nombre del titular</label>
+                <input type="text" id="cardholder-name"
+                    class="border mb-2 mt-1 block w-full border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700" for="card-number">Número de la tarjeta</label>
+                <input type="text" id="card-number"
+                    class="border  mb-2 mt-1 block w-full border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+            </div>
+
+            <div class="flex space-x-4">
+                <div class="flex-1">
+                    <label class="block text-sm font-medium text-gray-700" for="start-date">Fecha de vencimiento
+                        (mm/yy)</label>
+                    <input type="text" id="start-date"
+                        class="border  mb-2  mb-2mt-1 block w-full border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700" for="issue-number">CVV</label>
+                <input type="text" id="issue-number"
+                    class="border  mb-2 mt-1 block w-full border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 rounded-md">
+            </div>
+        </div>
+
+        <button
+            class="w-full mt-4 mb-6 bg-purple-500 text-white font-medium py-2 px-4 rounded hover:bg-purple-800 transition duration-300 ease-in-out shadow hover:shadow-md">
+            Pagar
+        </button>
+    </div>
+    </div>
+</body>
+
+</html>

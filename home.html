@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>El Corte Americano</title>
+    <!--Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="js/home.js" defer></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+      body {
+        font-family: 'Nunito', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div
+      class="max-w-xl mx-auto p-6 text-center bg-white shadow-lg rounded-lg mt-12"
+    >
+      <h1 class="text-3xl font-bold text-gray-900 mb-6">El Corte Americano</h1>
+      <button
+        class="mb-6 bg-purple-500 text-white font-medium py-2 px-4 rounded hover:bg-purple-800 transition duration-300 ease-in-out shadow hover:shadow-md"
+      >
+        Escanear QR del producto abajo
+      </button>
+      <div style="width: 500px" id="reader"></div>
+    </div>
+  </body>
+</html>
