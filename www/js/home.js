@@ -2,7 +2,7 @@
 
 async function fetchProductInfo(productId) {
   try {
-    const response = await fetch('/data/data.json');
+    const response = await fetch('/products');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

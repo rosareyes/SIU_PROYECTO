@@ -1,0 +1,12 @@
+[
+  {
+    "id": "4",
+    "nombre": "The Legend of Zelda: Breath of the Wild",
+    "imagen": "/media/4.jpg",
+    "descripcion": "Videojuego de aventura en un extenso mundo abierto, donde explorarás, resolverás acertijos y combatirás enemigos míticos.",
+    "precio": "59",
+    "instrucciones_de_uso": "Insertar el juego en la consola Nintendo Switch. Seguir las instrucciones en pantalla para comenzar a jugar.",
+    "video_url": "https://example.com/demo_zelda.mp4",
+    "cantidad": 2
+  }
+]
