@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     await updateCartOnServer(carrito);
-    window.location.href = 'cart.html'; // Redirect to the cart page
+    //window.location.href = 'cart.html'; // Redirect to the cart page
+    showPopup(); // Show popup instead of redirecting
   }
 
   // Accelerometer-based functionality for shaking detection
@@ -117,4 +118,14 @@ function isSignificantMotion(deltaX, deltaY, deltaZ) {
     (deltaX > threshold && deltaZ > threshold) ||
     (deltaY > threshold && deltaZ > threshold)
   );
+}
+
+function showPopup() {
+  const popup = document.getElementById('popup-notification');
+  popup.classList.remove('hidden');
+}
+
+function hidePopup() {
+  const popup = document.getElementById('popup-notification');
+  popup.classList.add('hidden');
 }
