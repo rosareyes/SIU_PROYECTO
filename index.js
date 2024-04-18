@@ -6,7 +6,7 @@ ROSA REYES - 100434072
 const fs = require('fs');
 const express = require('express');
 const app = express();
-const PORT = 5500;
+const PORT = process.env.PORT || 5500;
 
 const http = require('http');
 const server = http.createServer(app);
