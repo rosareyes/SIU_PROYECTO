@@ -36,6 +36,10 @@ app.use(express.json());
 // Serve static files from 'www' directory
 app.use(express.static('www'));
 
+app.get('/', (req, res) => {
+  res.sendFile('index.html', { root: 'www' });
+});
+
 app.get('/cart', async (req, res) => {
   try {
     const data = await fs.promises.readFile('cart.json', 'utf8');
