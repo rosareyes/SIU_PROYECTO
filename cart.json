@@ -1,5 +1,17 @@
 [
   {
+    "id": "1",
+    "nombre": "Stanley Quick Flip Botella de Agua de Acero Inoxidable",
+    "imagen": "/media/1.jpg",
+    "descripcion": "Botella de agua Stanley de acero inoxidable con tecnología Quick Flip para un fácil acceso. Ideal para mantener las bebidas frías o calientes gracias a su aislamiento de doble pared.",
+    "precio": "25",
+    "instrucciones_de_uso": "Lavar antes del primer uso. Para beber, abrir la tapa usando el mecanismo Quick Flip. No apta para microondas o congelador. Lavar a mano.",
+    "video_url": "https://example.com/demo_stanley_botella.mp4",
+    "cantidad": 3,
+    "orden": 0,
+    "favorito": "Si"
+  },
+  {
     "id": "4",
     "nombre": "The Legend of Zelda: Breath of the Wild",
     "imagen": "/media/4.jpg",
@@ -7,6 +19,8 @@
     "precio": "59",
     "instrucciones_de_uso": "Insertar el juego en la consola Nintendo Switch. Seguir las instrucciones en pantalla para comenzar a jugar.",
     "video_url": "https://example.com/demo_zelda.mp4",
-    "cantidad": 12
+    "cantidad": 12,
+    "orden": 1,
+    "favorito": "No"
   }
 ]

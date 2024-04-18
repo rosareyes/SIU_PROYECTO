@@ -6,7 +6,7 @@ ROSA REYES - 100434072
 const fs = require('fs');
 const express = require('express');
 const app = express();
-const PORT = 3006;
+const PORT = 5500;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
