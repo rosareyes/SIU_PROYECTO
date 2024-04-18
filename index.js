@@ -30,15 +30,11 @@ io.on('connection', (socket) => {
   });
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/index.html'));
-});
-
 // Middleware to parse JSON bodies
 app.use(express.json());
 
 // Serve static files from 'www' directory
-app.use(express.static('www'));
+app.use(express.static(path.join(__dirname, 'www')));
 
 app.get('/cart', async (req, res) => {
   try {
