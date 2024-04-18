@@ -16,7 +16,7 @@
 
         <div class="bg-purple-200 p-4">
 
-            <h3>Pago realizado con éxito</h3>
+            <h3>¡Gracias!</h3>
             <div class="py-6 ">
                 <svg class="mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="160px"
                     height="160px">
@@ -32,7 +32,7 @@
 
 
         </div>
-        <button class="shadow-lg align-left p-6 mt-4">
+        <button class="shadow-lg align-left p-6 mt-4" id="helpButton">
             <p class="mb-4">Si necesitas ayuda, presiona aquí</p>
 
             <svg class="mx-auto" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,8 @@
                 xml:space="preserve">
                 <g>
                     <g>
-                        <path d="M76.712,62.718c-0.672-1.567-1.792-1.792-3.136-2.239c-6.496-2.463-11.872-3.584-18.145-5.823
+                        <path
+                            d="M76.712,62.718c-0.672-1.567-1.792-1.792-3.136-2.239c-6.496-2.463-11.872-3.584-18.145-5.823
                     c-0.449-0.224-2.24-1.345-2.24-4.479c0-1.344-0.225-2.016-1.793-2.016c-0.446,0-0.225,0-0.446-0.896
                     c-0.448-2.912-0.448-4.479-0.448-4.929s0.448-0.896,0.672-1.12c2.24-2.912,2.688-6.72,2.688-8.512c0,0,0.446,0.224,0.896-0.896
                     c0.448-1.344,0.674-1.791,1.12-3.358c0.448-1.12,0.673-3.584-0.896-3.584c-0.896,0.447-0.672,0-0.672-1.12c0-3.36,0-4.929,0-8.288
@@ -77,6 +78,9 @@
             Volver al inicio
         </a>
     </div>
-</body>
 
+    <script src="/socket.io/socket.io.js"></script>
+  
+    <script src="js/checkout.js" defer></script>
+</body>
 </html>

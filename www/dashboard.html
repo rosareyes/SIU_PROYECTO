@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard del Dependiente - El Corte Americano</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/dashboard.js" defer></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-12">
+      <h2 class="text-2xl font-bold text-gray-900 text-center">
+        Dashboard del Dependiente
+      </h2>
+      <div
+        id="notification"
+        class="text-lg font-semibold mt-4 p-4 bg-purple-100 rounded shadow text-gray-700"
+      >
+        Esperando una compra o petición de ayuda...
+      </div>
+    </div>
+  </body>
+</html>

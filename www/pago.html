@@ -8,13 +8,13 @@
     <!--Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/html5-qrcode"></script>
-    <script src="js/product-info.js" defer></script>
+    <script src="js/pago.js" ></script>
 </head>
 
 <body class="bg-gray-100">
     <div class="max-w-xl mx-auto p-6 text-center bg-white shadow-lg rounded-lg mt-12">
         <h2 class="text-xl font-bold text-gray-900">Pago</h2>
-
+        <form id="payment-form">
         <div class="py-6">
             <div>
                 <label class="block text-sm font-medium text-gray-700" for="cardholder-name">Nombre del titular</label>
@@ -43,9 +43,11 @@
         </div>
 
         <button
+        type="submit"
             class="w-full mt-4 mb-6 bg-purple-500 text-white font-medium py-2 px-4 rounded hover:bg-purple-800 transition duration-300 ease-in-out shadow hover:shadow-md">
             Pagar
         </button>
+    </form>
     </div>
     </div>
 </body>
