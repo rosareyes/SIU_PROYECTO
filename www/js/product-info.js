@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
       carrito[existingProductIndex].cantidad += 1;
     } else {
       producto.cantidad = 1;
+      producto.orden = carrito.length; // Añade el atributo 'orden' al producto
+      producto.favorito = 'No'; // Añade el atributo 'favorito' al producto
       carrito.push(producto);
     }
 
