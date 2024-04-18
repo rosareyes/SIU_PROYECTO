@@ -37,7 +37,7 @@ app.use(express.json());
 app.use(express.static('www'));
 
 app.get('/', (req, res) => {
-  res.sendFile('index.html', { root: 'www' });
+  res.sendFile('www/index.html', { root: 'www' });
 });
 
 app.get('/cart', async (req, res) => {
