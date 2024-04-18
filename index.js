@@ -14,6 +14,11 @@ const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
 
+app.use((req, res, next) => {
+  console.log(`Incoming request for ${req.originalUrl}`);
+  next();
+});
+
 io.on('connection', (socket) => {
   socket.on('purchaseCompleted', (data) => {
     console.log(
