@@ -39,17 +39,26 @@ document.addEventListener('DOMContentLoaded', async () => {
   async function updateProductQuantity(action) {
     const cart = await fetchCartData();
     const productIndex = cart.findIndex((p) => p.id === producto.id);
-
+    const isProductDeleted = false;
     if (productIndex !== -1) {
       if (action === 'increase') {
         cart[productIndex].cantidad += 1;
-      } else if (action === 'decrease' && cart[productIndex].cantidad > 1) {
-        cart[productIndex].cantidad -= 1;
+      } else if (action === 'decrease') {
+        if (cart[productIndex].cantidad > 1) {
+          cart[productIndex].cantidad -= 1;
+        } else {
+          cart.splice(productIndex, 1);
+          isProductDeleted = true;
+        }
       }
-
       updateCartOnServer(cart);
-      document.getElementById('current-quantity').textContent =
-        cart[productIndex].cantidad;
+      if (isProductDeleted) {
+        alert('Producto borrado correctamente');
+        window.location.href = 'cart.html';
+      } else {
+        document.getElementById('current-quantity').textContent =
+          cart[productIndex].cantidad;
+      }
     }
   }
 
