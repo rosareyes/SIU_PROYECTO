@@ -51,9 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //window.location.href = 'cart.html'; // Redirect to the cart page
     showPopup(); // Show popup instead of redirecting
   }
-
-  // Accelerometer-based functionality for shaking detection
-  setupAccelerometer();
 });
 
 // Fetch current cart from the server
@@ -80,48 +77,6 @@ async function updateCartOnServer(cart) {
     console.error('Failed to update cart on the server:', error);
   }
 }
-
-// Setup accelerometer event if available
-function setupAccelerometer() {
-  if ('Accelerometer' in window) {
-    const acc = new Accelerometer({ frequency: 60 });
-    let lastX, lastY, lastZ;
-    let shaking = false;
-    let timer;
-
-    acc.onreading = () => {
-      const deltaX = Math.abs(lastX - acc.x);
-      const deltaY = Math.abs(lastY - acc.y);
-      const deltaZ = Math.abs(lastZ - acc.z);
-      if (isSignificantMotion(deltaX, deltaY, deltaZ)) {
-        if (!shaking) {
-          console.log('Shake detected');
-          shaking = true;
-          onClickAddToCart();
-          clearTimeout(timer);
-        }
-      } else {
-        if (shaking) {
-          shaking = false;
-          timer = setTimeout(() => console.log('Shake stopped'), 500);
-        }
-      }
-      [lastX, lastY, lastZ] = [acc.x, acc.y, acc.z];
-    };
-
-    acc.start();
-  }
-}
-
-function isSignificantMotion(deltaX, deltaY, deltaZ) {
-  const threshold = 15;
-  return (
-    (deltaX > threshold && deltaY > threshold) ||
-    (deltaX > threshold && deltaZ > threshold) ||
-    (deltaY > threshold && deltaZ > threshold)
-  );
-}
-
 function showPopup() {
   const popup = document.getElementById('popup-notification');
   popup.classList.remove('hidden');
