@@ -29,11 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartContainer = document.getElementById('cart-container');
     cartContainer.innerHTML = ''; // Clear previous contents
 
+    let total = 0; // Initialize total
+
     if (carrito.length > 0) {
       carrito.forEach((producto) => {
+        total += producto.precio * producto.cantidad; // Update total
         const productDiv = createProductDiv(producto);
         cartContainer.appendChild(productDiv);
       });
+
+      const totalDiv = document.createElement('div');
+      totalDiv.className = 'text-lg font-bold mt-4 text-center';
+      totalDiv.textContent = `Total: ${total}€`;
+      cartContainer.appendChild(totalDiv);
     } else {
       cartContainer.innerText = 'No hay productos en el carrito.';
       cartContainer.className = 'text-center text-gray-500 text-xl';

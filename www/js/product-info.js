@@ -13,26 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // mostrar la información del producto si está disponible
   if (producto) {
     container.innerHTML = `
-      <div class="bg-white rounded-lg text-left">
-        <h2 class="text-xl font-bold text-center">${producto.nombre}</h2>
-        <img src="${producto.imagen}" alt="Imagen del producto" class="mx-auto my-4 max-h-[200px] rounded" />
-        <div class="my-4">
-          <h3 class="text-lg font-semibold">Info del Producto</h3>
-          <p>${producto.descripcion}</p>
+    <div class="bg-white rounded-lg p-6 shadow-lg">
+        <h2 class="text-2xl font-bold text-gray-900 text-center">${producto.nombre}</h2>
+        <img src="${producto.imagen}" alt="Imagen del producto" class="mx-auto my-4 max-h-[200px] rounded-lg shadow-sm" />
+        <div class="mt-6">
+            <h3 class="text-lg font-semibold text-gray-800">Info del Producto</h3>
+            <p class="text-gray-600 mt-2">${producto.descripcion}</p>
         </div>
-        <div class="my-4">
-          <h3 class="text-lg font-semibold">Precio</h3>
-          <p class="font-semibold">${producto.precio}€</p>
+        <div class="mt-6">
+            <h3 class="text-lg font-semibold text-gray-800">Precio</h3>
+            <p class="text-lg font-semibold text-purple-600">${producto.precio}€</p>
         </div>
-        <div class="my-4">
-          <h3 class="text-lg font-semibold">Video</h3>
-          <a href="${producto.video_url}" target="_blank" class="text-blue-500 hover:text-blue-700">Ver Video</a>
+        <div class="mt-6">
+            <h3 class="text-lg font-semibold text-gray-800">Instrucciones</h3>
+            <p class="text-gray-600 mt-2">${producto.instrucciones_de_uso}</p>
         </div>
-        <div class="my-4">
-          <h3 class="text-lg font-semibold">Instrucciones</h3>
-          <p>${producto.instrucciones_de_uso}</p>
-        </div>
-      </div>`;
+    </div>`;
   } else {
     container.innerText = 'No hay información del producto disponible.';
   }

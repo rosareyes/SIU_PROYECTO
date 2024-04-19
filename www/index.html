@@ -7,11 +7,10 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no"
     />
     <title>El Corte Americano</title>
-    <!--Tailwind CSS CDN -->
+    <!--Tailwind CSS CDN-->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/html5-qrcode"></script>
     <script src="js/home.js" defer></script>
-
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
       body {
@@ -20,24 +19,26 @@
     </style>
   </head>
   <body class="bg-gray-100">
-    <div
-      class="max-w-xl mx-auto p-6 text-center bg-white shadow-lg rounded-lg mt-12"
-    >
-      <h1 class="text-3xl font-bold text-gray-900 mb-6">El Corte Americano</h1>
-      <div
-        class="underline text-gray-900 mb-6 text-2xl font-medium py-2 px-4 rounded shadow hover:shadow-md"
-      >
-        Escanear QR del producto abajo
-      </div>
-      <div class="flex justify-center items-center">
+    <div class="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-12">
+      <h1 class="text-4xl font-bold text-purple-700 mb-8">
+        El Corte Americano
+      </h1>
+      <div class="grid gap-4 grid-cols-2 mb-8">
         <a
           href="/cart.html"
-          class="mx-auto mt-4 mb-6 bg-purple-500 text-white font-medium py-2 px-4 rounded hover:bg-purple-800 transition duration-300 ease-in-out shadow hover:shadow-md"
+          class="bg-purple-500 text-white font-semibold py-3 px-4 rounded hover:bg-purple-700 transition duration-300 ease-in-out shadow-lg"
+          >Ir al carrito</a
         >
-          Ir al carrito
-        </a>
+        <a
+          href="/favoritos.html"
+          class="bg-purple-500 text-white font-semibold py-3 px-4 rounded hover:bg-purple-700 transition duration-300 ease-in-out shadow-lg"
+          >Ir a favoritos</a
+        >
       </div>
-      <div style="width: 100%" id="reader"></div>
+      <div class="text-lg text-purple-800 font-semibold mb-6">
+        Escanear QR del producto abajo
+      </div>
+      <div id="reader" class="w-full"></div>
     </div>
   </body>
 </html>

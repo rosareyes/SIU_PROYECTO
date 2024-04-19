@@ -4,31 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>El Corte Americano - Carrito de Compras</title>
-    <!--Tailwind CSS CDN -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/cart.js" defer></script>
   </head>
   <body class="bg-gray-100">
-    <div
-      class="max-w-xl mx-auto p-6 text-center bg-white shadow-lg rounded-lg mt-12"
-    >
-      <div class="flex justify-center items-center">
+    <div class="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-12">
+      <h1 class="text-3xl font-bold text-gray-900 mb-6 text-center">
+        Carrito de Compras
+      </h1>
+      <div id="cart-container" class="mb-4"></div>
+      <div class="flex justify-between items-center">
         <a
           href="/index.html"
-          class="mx-auto mt-4 mb-6 bg-purple-500 text-white font-medium py-2 px-4 rounded hover:bg-purple-800 transition duration-300 ease-in-out shadow hover:shadow-md"
+          class="mt-4 bg-purple-500 text-white font-medium py-2 px-4 rounded hover:bg-purple-700 transition duration-300 ease-in-out shadow"
+          >Volver al inicio</a
         >
-          Volver al inicio
-        </a>
-      </div>
-      <h1 class="text-3xl font-bold text-gray-900 mb-6">Carrito de Compras</h1>
-      <div id="cart-container"></div>
-      <div class="flex justify-center items-center">
         <a
           href="/pago.html"
-          class="mx-auto mt-4 mb-6 bg-purple-500 text-white font-medium py-2 px-4 rounded hover:bg-purple-800 transition duration-300 ease-in-out shadow hover:shadow-md"
+          class="mt-4 bg-green-500 text-white font-medium py-2 px-4 rounded hover:bg-green-700 transition duration-300 ease-in-out shadow"
+          >Pagar</a
         >
-          Pagar
-        </a>
       </div>
     </div>
   </body>
