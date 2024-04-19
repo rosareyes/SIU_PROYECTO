@@ -4,33 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>El Corte Americano - Escanear Producto</title>
-    <!--Tailwind CSS CDN -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/html5-qrcode"></script>
     <script src="js/addedtocart.js" defer></script>
     <script src="js/tilt-detection.js" defer></script>
   </head>
-  <body class="bg-gray-100">
+  <body class="bg-gray-100 font-sans">
     <div
-      class="max-w-xl mx-auto p-6 text-center bg-white shadow-lg rounded-lg mt-12"
+      class="max-w-xl mx-auto p-6 text-center bg-white shadow-lg rounded-lg mt-12 space-y-4"
     >
-    <div class="bg-white p-4 rounded-lg text-center">
-        <p class="text-lg">
-          Producto añadido al carrito con éxito.
+      <h1 class="text-xl font-bold text-gray-800">
+        Producto añadido al carrito
+      </h1>
+      <div class="bg-purple-100 p-4 rounded-lg shadow-inner">
+        <p class="text-lg text-gray-700">
+          Cantidad actual:
+          <span id="current-quantity" class="font-semibold text-purple-600"
+            >1</span
+          >
         </p>
-        <p>Mueve a la derecha para agregar más cantidad.</p>
-        <p>Mueve a la izquierda para disminuir cantidad.</p>
-
-      
+        <p class="text-sm text-gray-600">
+          Mueve a la derecha para agregar más cantidad.
+        </p>
+        <p class="text-sm text-gray-600">
+          Mueve a la izquierda para disminuir cantidad.
+        </p>
       </div>
-        <a
-          href="/cart.html"
-          class="block w-full mt-4 mb-6 bg-purple-500 text-white font-medium py-2 px-4 rounded hover:bg-purple-800 transition duration-300 ease-in-out shadow hover:shadow-md"
-        >
-          Ir al carrito
-        </a>
-      </div>
-
+      <a
+        href="/cart.html"
+        class="block w-full mt-4 bg-purple-500 text-white font-medium py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-purple-700 shadow hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+      >
+        Ir al carrito
+      </a>
     </div>
   </body>
 </html>
