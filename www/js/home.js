@@ -1,3 +1,10 @@
+/* 
+PROYECTO FINAL - SISTEMAS INTERACTIVOS Y UBICUOS
+ROSA REYES - 100434072
+DAVID ROLDAN - 100451289
+ELENA SERRANO - 100451094
+*/
+
 // https://github.com/mebjas/html5-qrcode?tab=readme-ov-file
 
 async function fetchProductInfo(productId) {

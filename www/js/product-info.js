@@ -1,9 +1,16 @@
+/* 
+PROYECTO FINAL - SISTEMAS INTERACTIVOS Y UBICUOS
+ROSA REYES - 100434072
+DAVID ROLDAN - 100451289
+ELENA SERRANO - 100451094
+*/
+
 document.addEventListener('DOMContentLoaded', () => {
   const addToCartBtn = document.getElementById('add-to-cart-btn');
   const container = document.getElementById('product-info-container');
   const producto = JSON.parse(localStorage.getItem('producto'));
 
-  // Display product information if available
+  // mostrar la información del producto si está disponible
   if (producto) {
     container.innerHTML = `
       <div class="bg-white rounded-lg text-left">
@@ -30,18 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerText = 'No hay información del producto disponible.';
   }
 
-  // Add event listener for "Add to Cart" button
+  // añadir un evento al botón de añadir al carrito
   addToCartBtn.addEventListener('click', onClickAddToCart);
 
-  // Function to add to cart
-  async function onClickAddToCart() {
-
-    window.location.href = 'addedtocart.html'; // Redirect to the cart page
-   // showPopup(); // Show popup instead of redirecting
+  function onClickAddToCart() {
+    window.location.href = 'addedtocart.html';
   }
 });
 
-// Fetch current cart from the server
 async function fetchCart() {
   try {
     const response = await fetch('/cart');
@@ -53,7 +56,6 @@ async function fetchCart() {
   }
 }
 
-// Update the cart on the server
 async function updateCartOnServer(cart) {
   try {
     await fetch('/cart/update', {
@@ -64,13 +66,4 @@ async function updateCartOnServer(cart) {
   } catch (error) {
     console.error('Failed to update cart on the server:', error);
   }
-}
-function showPopup() {
-  const popup = document.getElementById('popup-notification');
-  popup.classList.remove('hidden');
-}
-
-function hidePopup() {
-  const popup = document.getElementById('popup-notification');
-  popup.classList.add('hidden');
 }

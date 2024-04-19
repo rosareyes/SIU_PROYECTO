@@ -1,9 +1,18 @@
+/* 
+PROYECTO FINAL - SISTEMAS INTERACTIVOS Y UBICUOS
+ROSA REYES - 100434072
+DAVID ROLDAN - 100451289
+ELENA SERRANO - 100451094
+*/
+
 document.addEventListener('DOMContentLoaded', async () => {
   const producto = JSON.parse(localStorage.getItem('producto'));
-
-  
-  document.getElementById('decrease-btn').addEventListener('click', () => updateProductQuantity('decrease'));
-  document.getElementById('increase-btn').addEventListener('click', () => updateProductQuantity('increase'));
+  document
+    .getElementById('decrease-btn')
+    .addEventListener('click', () => updateProductQuantity('decrease'));
+  document
+    .getElementById('increase-btn')
+    .addEventListener('click', () => updateProductQuantity('increase'));
 
   if ('Accelerometer' in window) {
     let lastX = 0;
@@ -50,7 +59,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       } else if (action === 'decrease') {
         if (cart[productIndex].cantidad > 1) {
           cart[productIndex].cantidad -= 1;
-
         } else {
           cart.splice(productIndex, 1);
           isProductDeleted = true;
@@ -59,10 +67,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
       }
       updateCartOnServer(cart);
- 
-        document.getElementById('current-quantity').textContent =
-          cart[productIndex].cantidad;
-    
+
+      document.getElementById('current-quantity').textContent =
+        cart[productIndex].cantidad;
     }
   }
 
