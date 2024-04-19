@@ -63,8 +63,30 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
+    // Establish the background color based on favorito status
+    updateFavoritoBackground(producto, productDiv);
+
+    // Toggle favorito status on double-click
+    productDiv.addEventListener('dblclick', async () => {
+      toggleFavoritoStatus(producto);
+      updateFavoritoBackground(producto, productDiv);
+      await updateCartOnServer(carrito); // Update the cart on the server
+    });
+
     addDragAndDropHandlers(productDiv);
     return productDiv;
+  }
+
+  function toggleFavoritoStatus(producto) {
+    producto.favorito = producto.favorito === 'Si' ? 'No' : 'Si';
+  }
+
+  function updateFavoritoBackground(producto, productDiv) {
+    if (producto.favorito === 'Si') {
+      productDiv.style.backgroundColor = '#eabef8'; // Change background to purple
+    } else {
+      productDiv.style.backgroundColor = ''; // Reset background
+    }
   }
 
   function addDragAndDropHandlers(div) {
