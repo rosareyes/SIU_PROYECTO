@@ -11,13 +11,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       acc.onreading = () => {
         if (Math.abs(acc.x - lastX) > threshold) {
           if (acc.x > 9 && !tiltedRight) {
+            // izquierda - eliminar
             tiltedRight = true;
             tiltedLeft = false;
-            updateProductQuantity('increase');
+            updateProductQuantity('decrease');
+            document.body.style.backgroundColor = '#f4cccc';
           } else if (acc.x < -9 && !tiltedLeft) {
+            //derecha - agregar
             tiltedLeft = true;
             tiltedRight = false;
-            updateProductQuantity('decrease');
+            updateProductQuantity('increase');
+            document.body.style.backgroundColor = '#e0f0e3';
           }
         } else {
           tiltedRight = false;
