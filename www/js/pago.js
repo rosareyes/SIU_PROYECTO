@@ -30,7 +30,7 @@ function submitPayment(event) {
     })
     .then((data) => {
       alert('Pago procesado correctamente');
-      window.location.href = 'checkout.html'; // Redirecciona a la página de confirmación
+      window.location.href = 'loading.html'; // Redirecciona a la página de confirmación
     })
     .catch((error) => {
       console.error('Error:', error);
