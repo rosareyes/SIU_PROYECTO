@@ -35,21 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to add to cart
   async function onClickAddToCart() {
-    let carrito = await fetchCart();
-    const existingProductIndex = carrito.findIndex((p) => p.id === producto.id);
 
-    if (existingProductIndex !== -1) {
-      carrito[existingProductIndex].cantidad += 1;
-    } else {
-      producto.cantidad = 1;
-      producto.orden = carrito.length; // Añade el atributo 'orden' al producto
-      producto.favorito = 'No'; // Añade el atributo 'favorito' al producto
-      carrito.push(producto);
-    }
-
-    await updateCartOnServer(carrito);
-    //window.location.href = 'cart.html'; // Redirect to the cart page
-    showPopup(); // Show popup instead of redirecting
+    window.location.href = 'addedtocart.html'; // Redirect to the cart page
+   // showPopup(); // Show popup instead of redirecting
   }
 });
 

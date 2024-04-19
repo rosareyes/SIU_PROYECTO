@@ -39,7 +39,7 @@ io.on('connection', (socket) => {
 app.use(express.json());
 
 // Serve static files from 'www' directory
-app.use(express.static(path.join(__dirname, 'www')));
+app.use(express.static('www'));
 
 app.get('/cart', async (req, res) => {
   try {

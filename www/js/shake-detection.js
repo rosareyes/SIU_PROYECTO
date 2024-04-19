@@ -24,6 +24,7 @@ if ('Accelerometer' in window) {
           console.log('shake detected');
           shaking = true;
           addToCartBtn.style.backgroundColor = 'red';
+          window.location.href = 'addedtocart.html'; // Redirect to the cart page
           clearTimeout(timer);
         }
       } else {
