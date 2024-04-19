@@ -7,23 +7,30 @@ document.addEventListener('DOMContentLoaded', async () => {
     async function onClickAddToCart() {
       let carrito = await fetchCart();
       const existingProductIndex = carrito.findIndex((p) => p.id === producto.id);
-  
+
       if (existingProductIndex !== -1) {
         carrito[existingProductIndex].cantidad += 1;
+        document.getElementById('current-quantity').textContent = carrito[existingProductIndex].cantidad;
+
       } else {
         producto.cantidad = 1;
         producto.orden = carrito.length; // Añade el atributo 'orden' al producto
         producto.favorito = 'No'; // Añade el atributo 'favorito' al producto
         carrito.push(producto);
+        document.getElementById('current-quantity').textContent = carrito[0].cantidad;
+
       }
   
       await updateCartOnServer(carrito);
+
      // showPopup(); // Show popup instead of redirecting
     }
 
     // Call onClickAddToCart when the page loads
     try {
         await onClickAddToCart();
+
+        console.log('Producto:', producto);
     } catch (error) {
         console.error('Error while adding to cart:', error);
     }

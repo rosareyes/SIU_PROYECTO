@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const producto = JSON.parse(localStorage.getItem('producto'));
+
+  
+  document.getElementById('decrease-btn').addEventListener('click', () => updateProductQuantity('decrease'));
+  document.getElementById('increase-btn').addEventListener('click', () => updateProductQuantity('increase'));
+
   if ('Accelerometer' in window) {
     let lastX = 0;
     let tiltedRight = false;
@@ -39,26 +44,25 @@ document.addEventListener('DOMContentLoaded', async () => {
   async function updateProductQuantity(action) {
     const cart = await fetchCartData();
     const productIndex = cart.findIndex((p) => p.id === producto.id);
-    const isProductDeleted = false;
     if (productIndex !== -1) {
       if (action === 'increase') {
         cart[productIndex].cantidad += 1;
       } else if (action === 'decrease') {
         if (cart[productIndex].cantidad > 1) {
           cart[productIndex].cantidad -= 1;
+
         } else {
           cart.splice(productIndex, 1);
           isProductDeleted = true;
+          alert('Producto borrado correctamente');
+          window.location.href = 'cart.html';
         }
       }
       updateCartOnServer(cart);
-      if (isProductDeleted) {
-        alert('Producto borrado correctamente');
-        window.location.href = 'cart.html';
-      } else {
+ 
         document.getElementById('current-quantity').textContent =
           cart[productIndex].cantidad;
-      }
+    
     }
   }
 
