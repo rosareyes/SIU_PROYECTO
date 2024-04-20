@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       producto.orden = carrito.length; // Añade el atributo 'orden' al producto
       producto.favorito = 'No'; // Añade el atributo 'favorito' al producto
       carrito.push(producto);
-      document.getElementById('current-quantity').textContent =
-        carrito[0].cantidad;
+      document.getElementById('current-quantity').textContent = 1;
     }
 
     await updateCartOnServer(carrito);
