@@ -5,8 +5,10 @@ DAVID ROLDAN - 100451289
 ELENA SERRANO - 100451094
 */
 
+let clientName = 'Un cliente'; // Default name if no data is fetched
+
 document.addEventListener('DOMContentLoaded', () => {
-  let clientName = 'Un cliente'; // Default name if no data is fetched
+  
   fetchClienteData();
   setupSocket();
   setupHelpButton();
@@ -22,6 +24,8 @@ function setupHelpButton() {
     });
   });
 }
+
+
 
 function fetchClienteData() {
   fetch('/cliente')
@@ -58,3 +62,5 @@ function displayClientName(name) {
   nameElement.className = 'text-xl font-bold';
   messageDiv.insertBefore(nameElement, messageDiv.firstChild);
 }
+
+
