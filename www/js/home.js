@@ -9,6 +9,14 @@ ELENA SERRANO - 100451094
 
 let socket;
 document.addEventListener('DOMContentLoaded', () => {
+  const nameInput = document.getElementById('clientName');
+  clientName = nameInput.value.trim() || 'Un cliente';
+
+  nameInput.addEventListener('input', () => {
+    clientName = nameInput.value.trim() || 'Un cliente';
+    console.log('Name updated to:', clientName);
+  });
+
   var html5QrcodeScanner = new Html5QrcodeScanner('reader', {
     fps: 10,
     qrbox: 250,
