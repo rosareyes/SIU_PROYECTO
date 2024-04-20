@@ -36,7 +36,7 @@ function submitPayment(event) {
       return response.json();
     })
     .then((data) => {
-      alert('Pago procesado correctamente');
+      alert('Solicitud de pago recibida');
       window.location.href = 'loading.html'; // Redirecciona a la página de confirmación
     })
     .catch((error) => {

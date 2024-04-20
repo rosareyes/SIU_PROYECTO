@@ -51,7 +51,7 @@ if ('Accelerometer' in window) {
               return response.json();
             })
             .then((data) => {
-              alert('Pago procesado correctamente');
+              alert('Solicitud de pago recibida');
               window.location.href = 'loading.html';
             })
             .catch((error) => {

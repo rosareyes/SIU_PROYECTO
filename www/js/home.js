@@ -7,6 +7,33 @@ ELENA SERRANO - 100451094
 
 // https://github.com/mebjas/html5-qrcode?tab=readme-ov-file
 
+let socket;
+document.addEventListener('DOMContentLoaded', () => {
+  var html5QrcodeScanner = new Html5QrcodeScanner('reader', {
+    fps: 10,
+    qrbox: 250,
+  });
+  html5QrcodeScanner.render(onScanSuccess);
+  setupSocket();
+  setupHelpButton();
+});
+
+function setupSocket() {
+  socket = io(); // Connect to the server's socket
+}
+
+function setupHelpButton() {
+  const helpButton = document.getElementById('helpButton');
+  helpButton.addEventListener('click', function () {
+    const nameInput = document.getElementById('clientName');
+    const name = nameInput.value.trim() || 'Un cliente';
+    socket.emit('helpRequested', {
+      name: name,
+      message: `${name} pidió ayuda`,
+    });
+  });
+}
+
 async function fetchProductInfo(productId) {
   try {
     const response = await fetch('/products');
@@ -32,12 +59,6 @@ function onScanSuccess(decodedText, decodedResult) {
   console.log(`Code matched = ${decodedText}`, decodedResult);
   fetchProductInfo(decodedText);
 }
-
-var html5QrcodeScanner = new Html5QrcodeScanner('reader', {
-  fps: 10,
-  qrbox: 250,
-});
-html5QrcodeScanner.render(onScanSuccess);
 
 function displayProductInfo(producto) {
   localStorage.setItem('producto', JSON.stringify(producto));
