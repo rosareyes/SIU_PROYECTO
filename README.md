@@ -3,22 +3,10 @@
   <img align="center" src='https://github.com/rosareyes/SIU_PROYECTO/assets/63470281/be25f718-6c7f-4a4c-a0e8-e7afeb88d905' height='200px'>
 </div>
 
-## Integrantes del Equipo
-- Rosa Reyes - 100434072
-- David Roldán - 100451289
-- Elena Serrano - 100451094
-
 ## Nombre del Proyecto
 El Corte Americano
 
-## Cómo Ejecutar la App
-- Para ejecutar la aplicación, se debe ejecutar el siguiente comando en el root del directorio del proyecto:
-  - `npm install`
-  - `node index.js`
 
-- Para ver el dashboard del dependiente, se debe ir a la página `/dashboard.html`. Por ejemplo, `localhost:5500/dashboard.html`
-
-- Cuando en las demás páginas se haga una interacción con sockets, apareceran mensajes en el dashboard, como el de pedir ayuda o que el cliente ha hecho un pago.
 
 ## Funcionalidades del Proyecto
 Este proyecto implementa un sistema de comercio electrónico interactivo y ubicuo que permite a los usuarios:
@@ -36,3 +24,12 @@ Este proyecto implementa un sistema de comercio electrónico interactivo y ubicu
   - Se implementaron todas las funcionalidades planeadas y se añadieron algunas más, como la capacidad de ordenar los productos en el carrito y guardar este orden en el servidor Node.js.
   - Se añadió la funcionalidad de marcar productos como favoritos y una página de favoritos donde se pueden gestionar.
   - Se añadió el botón de ayuda no solo en la pantalla final del checkout, sino también al inicio de la aplicación.
+
+## Cómo Ejecutar la App
+- Para ejecutar la aplicación, se debe ejecutar el siguiente comando en el root del directorio del proyecto:
+  - `npm install`
+  - `node index.js`
+
+- Para ver el dashboard del dependiente, se debe ir a la página `/dashboard.html`. Por ejemplo, `localhost:5500/dashboard.html`
+
+- Cuando en las demás páginas se haga una interacción con sockets, apareceran mensajes en el dashboard, como el de pedir ayuda o que el cliente ha hecho un pago.
